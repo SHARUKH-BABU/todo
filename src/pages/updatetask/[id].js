@@ -12,7 +12,7 @@ function UpdateTask() {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const res = await fetch(`/api/topics/${query.id}`, {
+        const res = await fetch(`${process.env.DOMAIN}/api/topics/${query.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
