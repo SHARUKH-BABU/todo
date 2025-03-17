@@ -12,7 +12,7 @@ function Task() {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-    await fetch(`${process.env.DOMAIN}/api/topics`, {
+    await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/topics`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

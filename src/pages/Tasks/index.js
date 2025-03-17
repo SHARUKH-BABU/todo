@@ -7,7 +7,7 @@ function Tasks() {
     const [tasks, setTasks] = useState([]);
 
     const getTasks = async () => {
-        const response = await fetch(`${process.env.DOMAIN}/api/topics`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/topics`, {
             method: 'GET',
             cache: 'no-cache',
             headers: { 'Content-Type': 'application/json' },
@@ -32,7 +32,7 @@ function Tasks() {
                         <FaTrash 
                             className='text-red-500 cursor-pointer'
                             onClick={async () => {
-                                await fetch(`${process.env.DOMAIN}/api/topics?id=${task._id}`, {
+                                await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/topics?id=${task._id}`, {
                                     method: 'DELETE'
                                 });
                                 getTasks(); // Refresh the list after deletion
